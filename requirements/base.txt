@@ -1,0 +1,12 @@
+chainer
+Django
+filelock
+mock
+nose
+numpy
+pbr
+protobuf
+pytz
+six
+opencv-python==3.1.0.0
+Pillow
