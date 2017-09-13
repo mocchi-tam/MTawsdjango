@@ -1,0 +1,22 @@
+{% extends "image/base.html" %}
+{% block content %}
+<div class="container">
+  <div class="mt-5 text-center">
+    <h1 class="display-4">AKB48 16期生顔判定アプリ</h1>
+    <p>
+      <a href="{% url 'image:create' %}" class="btn btn-primary">画像アップロード</a>
+    </p>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-3">
+      <a href="{{ img.file.url }}"><img class="img-thumbnail" src="{{ img.file.url }}"></a>
+    </div>
+    <div class="col-3">
+      <h4>メンバー名</h4>
+      <h5>{{ img.names }}</h5>
+    </div>
+  </div>
+<a href="https://twitter.com/intent/tweet?button_hashtag=AKB16%E6%9C%9F%E9%A1%94%E5%88%A4%E5%AE%9A&text=%E9%A1%94%E5%88%A4%E5%AE%9A%E3%82%8F%E3%81%9A" class="twitter-hashtag-button" data-size="large" data-related="Mocchi_tam" data-url="http://www.mochitam.net">Tweet #AKB16%E6%9C%9F%E9%A1%94%E5%88%A4%E5%AE%9A</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+{% endblock %}

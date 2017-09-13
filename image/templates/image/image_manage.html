@@ -1,0 +1,22 @@
+{% extends "image/base.html" %}
+{% block content %}
+<div class="container">
+  <div class="mt-5 text-center">
+    <h1 class="display-4">AKB48 16期生顔判定アプリ 管理者ページ</h1>
+  </div>
+  <hr>
+  <div class="row">
+  {% for img in images %}
+    <div class="col-3">
+      <a href="{{ img.file.url }}"><img class="img-thumbnail" src="{{ img.file.url }}"></a>
+    </div>
+    <div class="col-3">
+      <h2>映っているメンバー</h2>
+      <h5>{{ img.names }}</h5>
+      <p><a href="{% url 'admin:image_image_delete' img.id %}">削除</a></p>
+    </div>
+  {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

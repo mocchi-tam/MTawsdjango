@@ -1,0 +1,26 @@
+{% extends "image/base.html" %}
+{% block content %}
+<div class="container">
+  <div class="mt-5 text-center">
+    <h1 class="display-4">AKB48 16期生顔判定アプリ</h1>
+  </div>
+  <hr>
+  <p>人工知能が顔からメンバーの名前を当てます。
+  <p>※α版となります。最初はめちゃくちゃな判定結果を出しますが、画像をたくさん見せていくうちにだんだん賢くなります(ただしα版のため僕による手動アップデート…)。ただし、顔(赤い四角)が検出されていない画像は使えませんのでご容赦下さい。</p>
+  <div class="col-sm-6 offset-sm-3">
+  <form action="" method="POST" enctype='multipart/form-data'>
+    <div class="form-group row">
+      <label for="{{ form.file.id_for_label }}" class="col-sm-3 form-control-label">
+        {{ form.file.label }}
+      </label>
+      <div class="col-sm-9">
+        {{ form.file }}
+        {{ form.file.errors }}
+      </div>
+    </div>
+    {% csrf_token %}
+    <input type="submit" class="btn btn-outline-primary btn-lg btn-block" value="送信する">
+  </form>
+  </div>
+</div>
+{% endblock %}
